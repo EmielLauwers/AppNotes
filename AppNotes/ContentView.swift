@@ -1,24 +1,27 @@
-//
-//  ContentView.swift
-//  AppNotes
-//
-//  Created by Emiel lauwers on 23/01/2025.
+
 //
 
 import SwiftUI
 
+
 struct ContentView: View {
+    @State var note: String
+   
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack{
+            VStack {
+                TextField("note", text: $note).textFieldStyle(.roundedBorder).padding()
+                Spacer()
+               
+                
+                
+            }
+            .navigationTitle("notes")
+            .padding()
         }
-        .padding()
     }
 }
 
 #Preview {
-    ContentView()
+    ContentView(note: "")
 }

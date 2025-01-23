@@ -11,7 +11,7 @@ import SwiftUI
 struct AppNotesApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(note:"s")
         }
     }
 }
