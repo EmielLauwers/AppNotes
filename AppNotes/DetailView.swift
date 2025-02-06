@@ -7,12 +7,40 @@
 
 import SwiftUI
 
+
 struct DetailView: View {
+    @Binding var task: ContentView.Taak
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            TextField("Taaknaam", text: $task.naam)
+                .font(.title)
+                .padding()
+                .textFieldStyle(.roundedBorder)
+                .foregroundColor(.blue)
+            
+            TextEditor(text: $task.beschrijving)
+                .font(.body)
+                .padding()
+                .border(Color.black).padding()
+                
+                .foregroundColor(.blue)
+                .padding()
+                .frame(height: 150) // Pas de hoogte aan naar behoefte
+            
+            
+            
+            Text("Status: \(task.isVoltooid ? "Voltooid" : "Niet voltooid")")
+                .font(.title2)
+                .fontWeight(.bold)
+                .padding()
+                .foregroundColor(.white)
+                .background(.blue)
+                .cornerRadius(10)
+        }
+        Spacer()
     }
 }
 
-#Preview {
-    DetailView()
-}
+
+
